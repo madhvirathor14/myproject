@@ -1,0 +1,306 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #2c2c2c;
+    color: #f4f4f4;
+}
+
+/* Background Images */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9409?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+/* Navbar (Task 1) */
+.navbar {
+    background-color: #333;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar .nav-link:hover {
+    background-color: #555;
+}
+
+.navbar .nav-link.active {
+    background-color: #007bff;
+}
+
+/* Main Content Layout */
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 1.5rem;
+}
+
+body.dark-mode h2 {
+    color: #66b3ff;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 2rem 0;
+}
+
+/* Form Styling (Task 2) */
+.form-container {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .form-container {
+    background-color: #3e3e3e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#subscription-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#subscription-form label {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+#subscription-form input,
+#subscription-form select,
+#subscription-form button {
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+body.dark-mode #subscription-form input,
+body.dark-mode #subscription-form select {
+    background-color: #555;
+    color: white;
+    border-color: #777;
+}
+
+#subscription-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s;
+}
+
+#subscription-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Subscription Cards (Task 3 & 7) */
+.subscription-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.subscription-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+body.dark-mode .subscription-card {
+    background-color: #3e3e3e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.subscription-card h4 {
+    margin-top: 0;
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+body.dark-mode .subscription-card h4 {
+    color: #66b3ff;
+}
+
+.subscription-card p {
+    margin: 0.5rem 0;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.card-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Profile & Settings (Task 8) */
+.profile-card, .settings-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+body.dark-mode .profile-card, body.dark-mode .settings-card {
+    background-color: #3e3e3e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.settings-card form {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-card form input {
+    margin-bottom: 1rem;
+}
+
+.setting-toggle {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Switch Toggle Styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Mobile Responsiveness (Task 7) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar .nav-link {
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    .subscription-grid {
+        grid-template-columns: 1fr;
+    }
+}
